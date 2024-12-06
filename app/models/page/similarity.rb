@@ -32,7 +32,7 @@ class Page
       # embedding MATCH subquery will fail with an invalid statement error.
       #
       scope :similar_to, ->(page) do
-        return none unless page.page_embedding
+        return none unless PageEmbedding.table_exists? && page.page_embedding
 
         select(pages: column_names, similar_embeddings: [:distance])
           .with(

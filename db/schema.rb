@@ -232,6 +232,5 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_15_130544) do
 
   # Virtual tables defined in this database.
   # Note that virtual tables may not work with other database engines. Be careful if changing database.
-  create_virtual_table "page_embeddings", "vec0", ["id text primary key", "embedding float[1536]"]
   create_virtual_table "pages_search_index", "fts5", ["title", "body", "page_id"]
 end

@@ -10,6 +10,7 @@ gem "sqlite3", force_ruby_platform: true # Use sqlite3 as the database for Activ
 gem "sqlite-ulid" # A SQLite extension for generating and working with ULIDs [https://github.com/asg017/sqlite-ulid]
 gem "sqlite-vec" # A SQLite extension for working with vectors [https://github.com/asg017/sqlite-vec]
 gem "sqlpkg" # A SQLite extension for working with packages [https://github.com/fractaledmind/sqlpkg-ruby]
+gem 'brick', path: '../brick'
 
 gem "solid_cache" # A database-backed ActiveSupport::Cache::Store [https://github.com/rails/solid_cache]
 gem "solid_queue" # A database-backed ActiveJob backend [https://github.com/rails/solid_queue]
@@ -86,7 +87,8 @@ group :development, :test do
   gem "css_parser", require: false # A pure Ruby CSS parser based on the CSS Syntax Level 3 specification [https://github.com/rgrove/crass]
   gem "brakeman", require: false # A static analysis security vulnerability scanner for Ruby on Rails applications [https://github.com/presidentbeef/brakeman]
   gem "bundle-audit", require: false # Patch level verification for Bundler [https://github.com/rubysec/bundler-audit]
-  gem "debug", platforms: %i[mri windows] # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  # gem "debug", platforms: %i[mri windows] # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'pry-byebug'
   gem "dotenv" # A Ruby gem to load environment variables from `.env` [https://github.com/bkeepers/dotenv]
   gem "factory_bot_rails" # A library for setting up Ruby objects as test data [https://github.com/thoughtbot/factory_bot_rails]
   gem "faker", require: false # A library for generating fake data [https://github.com/faker-ruby/faker]
