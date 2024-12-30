@@ -27,7 +27,7 @@ class Snippet < ApplicationRecord
 
   has_one_attached :screenshot
 
-  belongs_to :author, polymorphic: true, inverse_of: :snippets
+  delegated_type :author, types: ["User"], inverse_of: snippets
 
   attr_reader :auto_detecting
 

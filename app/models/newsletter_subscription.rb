@@ -13,7 +13,7 @@
 #  index_newsletter_subscriptions_on_subscriber  (subscriber_type,subscriber_id) UNIQUE
 #
 class NewsletterSubscription < ApplicationRecord
-  belongs_to :subscriber, polymorphic: true, inverse_of: :newsletter_subscription
+  delegated_type :subscriber, types: ["User"], inverse_of: newsletter_subscription
 
   generates_token_for :unsubscribe do
     subscriber.email

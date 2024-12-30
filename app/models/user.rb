@@ -26,6 +26,7 @@ class User < ApplicationRecord
   has_one :newsletter_subscription, as: :subscriber, dependent: :destroy
 
   has_many :snippets, as: :author, dependent: :destroy
+  has_many :notifications, as: :recipient, dependent: :destroy
   has_many :polls, foreign_key: :author_id, inverse_of: :author, dependent: :destroy
 
   scope :confirmed, -> { where.not(confirmed_at: nil) }
